@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="nl">
+<head>
+  <title>Validator documentation/test page</title>
+  <link type="text/css" href="validator.css" rel="stylesheet" />
+  <link type="text/css" href="calendar.css" rel="stylesheet" />
+  <script type="text/javascript" src="prototype-1.6.1.js"></script>
+  <script type="text/javascript" src="validator.js"></script>
+  <script type="text/javascript" src="calendar.js"></script>
+  <script type="text/javascript">
+    var calendar;
+    var validator;
+    document.observe('dom:loaded', function() {
+      calendar = new Calendar({
+        onClose: function () {
+          alert('close');
+        }
+      });
+      validator = new Validator({});
+    });
+  </script>
+</head>
+
+<body>
+  <h1>Validator documentation/test page</h1>
+
+  <h2>Initialization</h2>
+  <pre>
+    var validator;
+    var calendar;
+    document.observe('dom:loaded', function() {
+      validator = new Validator();
+      calendar = new Calendar();
+    });
+  </pre>
+  <p>The constructor can have a Hash-like argument, with 4 special keys:</p>
+  <ul>
+    <li>validators: extra/altered validators</li>
+    <li>country: 2 character country code, sets some country specific default options</li>
+    <li>language: 2 character language code, sets some language specific default options</li>
+    <li>options: altered default options</li>
+  </ul>
+
+  <h2>Enabling</h2>
+  <p>To enable validation of fields in a form, you should add the class <tt>validateable</tt> to the form. The name of the class can be overwritten via option <tt>triggerClass</tt> (if this option is <tt>null</tt>, all forms will be validated).</p>
+
+  <h2>Default validators</h2>
+  <p>The next section is a description and test of the default validators.</p>
+
+  <form method="post" action="" onsubmit="return validator.submit(this);" class="validateable">
+    <div>
+      <h3>Required fields</h3>
+      <pre>&lt;input id=&quot;required&quot; type=&quot;text&quot; name=&quot;required&quot; class=&quot;required&quot; /&gt;</pre>
+      <label>
+        Required:
+        <input id="required" type="text" name="required" class="required" />
+      </label>
+
+      <h3>Confirmation of fields</h3>
+      <pre>&lt;input id=&quot;confirmation&quot; type=&quot;text&quot; name=&quot;confirmation&quot; class=&quot;confirmation:required&quot; /&gt;</pre>
+      <label>
+        Confirmation (in this case of the required field above):
+        <input id="confirmation" type="text" name="confirmation" class="confirmation:required" />
+      </label>
+
+      <h3>Date fields</h3>
+      <pre>&lt;input id=&quot;date&quot; type=&quot;text&quot; name=&quot;date&quot; class=&quot;date&quot; /&gt;</pre>
+      <label>
+        Date (will be converted to YYYY/MM/DD):
+        <input id="date" type="text" name="date" class="date" />
+      </label>
+
+      <h3>Length of fields</h3>
+      <pre>&lt;input id=&quot;minMaxLength&quot; type=&quot;text&quot; name=&quot;minMaxLength&quot; class=&quot;minLength:5 maxLength:10&quot; /&gt;</pre>
+      <label>
+        Length (must be between 5 and 10):
+        <input id="minMaxLength" type="text" name="minMaxLength" class="minLength:5 maxLength:10" />
+      </label>
+
+      <h3>Numeric fields</h3>
+      <pre>&lt;input id=&quot;numeric&quot; type=&quot;text&quot; name=&quot;numeric&quot; class=&quot;numeric&quot; /&gt;</pre>
+      <label>
+        Numeric:
+        <input id="numeric" type="text" name="numeric" class="numeric" />
+      </label>
+
+      <h3>Minimum and maximum values of fields</h3>
+      <pre>&lt;input id=&quot;minMaxValue&quot; type=&quot;text&quot; name=&quot;minMaxValues&quot; class=&quot;minValue:5 maxValue:10&quot; /&gt;</pre>
+      <label>
+        Value (must be between 5 and 10):
+        <input id="minMaxValue" type="text" name="minMaxValues" class="minValue:5 maxValue:10" />
+      </label>
+
+      <br /><br />
+      <input type="submit" value="Submit" onclick="return validator.submit(this.form);" />
+    </div>
+  </form>
+</body>
+</html>

@@ -1,0 +1,44 @@
+.validator-error-field {
+  background-color: #FFF0F0;
+  border-bottom-color: #F6A9A9;
+  border-left-color: #E05959;
+  border-right-color: #F6A9A9;
+  border-top-color: #E05959;
+}
+
+.validator-error-image {
+  background-image: url(error.gif);
+  background-position: top right;
+  background-repeat: no-repeat;
+  height: 16px;
+  padding-left: 2px !important;
+  width: 16px;
+}
+
+.validator-error-message-left {
+  background-image: url(message-left.gif);
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  font-family: "trebuchet ms", arial;
+  font-size: 11px;
+  height: 24px;
+  padding-left: 16px !important;
+  padding-top: 2px !important;
+}
+
+.validator-error-message-center {
+  background-image: url(message-center.gif);
+  background-position: bottom left;
+  background-repeat: repeat-x;
+  color: #920000;
+  height: 17px;
+  padding-top: 7px !important;
+}
+
+.validator-error-message-right {
+  background-image: url(message-right.gif);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  height: 24px;
+  padding-right: 16px !important;
+}

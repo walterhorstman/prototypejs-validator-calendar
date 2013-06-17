@@ -1,0 +1,193 @@
+/* main calendar container (will be placed below bottom left pixel of field) */
+.calendar-container {
+  background-color: #EFEFED;
+  border-color: #006BC2;
+  border-style: solid;
+  border-width: 1px;
+  color: #333333;
+  font-family: Tahoma, Arial;
+  font-size: 11px;
+  margin-left: 0px;
+  margin-top: 2px;
+}
+
+/* the 4 main horizontal parts: navigation bar, week day labels, the dates per week and the footer */
+.calendar-navigation,
+.calendar-labels,
+.calendar-week,
+.calendar-footer {
+  height: 18px;
+  padding-bottom: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 3px;
+}
+
+.calendar-footer {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+/*
+  buttons are created like this (with additional classes for the individual button):
+
+  <div class="calendar-button-left">
+    <div class="calendar-button-right">
+      <div class="calendar-button-center">text</div>
+    </div>
+  </div>
+*/
+
+/* left part of buttons */
+.calendar-button-left {
+  background-color: #BBCADE;
+  border-style: solid;
+  border-width: 1px;
+  border-bottom-color: #808080;
+  border-left-color: #FFFFFF;
+  border-right-color: #808080;
+  border-top-color: #FFFFFF;
+  cursor: pointer;
+  padding-bottom: 3px;
+  padding-left: 8px;
+  padding-top: 3px;
+}
+
+/* right part of buttons */
+.calendar-button-right {
+  padding-right: 8px;
+}
+
+/* center part of buttons */
+.calendar-button-center {
+}
+
+/* left part (thus total button) hovered */
+.calendar-button-hover {
+  background-color: #FFFFCC;
+}
+
+/* cells for next and previous buttons (can be split up in separate definitions) */
+.calendar-next-month-left,
+.calendar-next-year-left,
+.calendar-previous-month-left,
+.calendar-previous-year-left,
+.calendar-title-left,
+.calendar-today-left,
+.calendar-close-left {
+  color: #808080;
+  font-size: 9px;
+  font-weight: bold;
+  height: 12px;
+  margin-right: 1px;
+  width: 18px;
+}
+
+.calendar-next-year-left,
+.calendar-previous-year-left {
+  width: 22px;
+}
+
+.calendar-title-left {
+  background-color: #CCCCCC;
+  cursor: default;
+  width: 104px;
+}
+
+.calendar-title-center {
+  text-align: center;
+  width: 96px;
+}
+
+/* general properties for all label cells */
+.calendar-labels div {
+  background-color: #CCCCCC;
+  border-color: #AAAAAA;
+  border-style: solid;
+  border-width: 1px;
+  color: #FFFFFF;
+  font-weight: bold;
+  height: 15px;
+  margin-right: 2px;
+  padding-bottom: 1px;
+  padding-top: 1px;
+  text-align: center;
+  width: 30px;
+}
+
+/* first cell in week day labels */
+.calendar-labels div.calendar-first {
+  margin-left: 2px;
+}
+
+/* general properties for all cells in the days section */
+.calendar-week div {
+  color: #999999;
+  cursor: pointer;
+  margin-right: 3px;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  text-align: center;
+  width: 31px;
+}
+
+/* first cell in dates per week section */
+.calendar-week div.calendar-first {
+  margin-left: 3px;
+}
+
+/* cell with same month as month in title */
+.calendar-week div.calendar-current-month {
+  color: #333366;
+}
+
+/* cell with same date as field */
+.calendar-week div.calendar-field-date {
+  background-color: #CCCCCC;
+  border-color: #AAAAAA;
+  border-style: solid;
+  border-width: 1px;
+  color: #0062B2;
+  font-weight: bold;
+  padding-bottom: 1px;
+  padding-top: 1px;
+  width: 29px;
+}
+
+/* cell with today's (or system) date */
+.calendar-week div.calendar-today {
+  border-color: #AAAAAA;
+  border-style: solid;
+  border-width: 1px;
+  padding-bottom: 1px;
+  padding-top: 1px;
+  width: 29px;
+}
+
+/* hovered cell in week section */
+.calendar-week div.calendar-hover {
+  background-color: #EFEFED;
+  border-color: #006BC2;
+  border-style: solid;
+  border-width: 1px;
+  padding-bottom: 1px;
+  padding-top: 1px;
+  width: 29px;
+}
+
+.calendar-today-left,
+.calendar-close-left {
+  margin-left: 20px;
+  margin-right: 0px;
+  width: 88px;
+}
+
+.calendar-today-center,
+.calendar-close-center {
+  text-align: center;
+  width: 80px;
+}
+
+.calendar-close-left {
+  margin-left: 5px;
+}

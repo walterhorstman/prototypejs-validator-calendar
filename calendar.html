@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Validator documentation/test page</title>
+  <link type="text/css" rel="stylesheet" href="calendar.css" />
+  <script type="text/javascript" src="prototype-1.6.1.js"></script>
+  <script type="text/javascript" src="calendar.js"></script>
+  <script type="text/javascript">
+    document.observe('dom:loaded', function() {
+      new Calendar();
+    });
+  </script>
+</head>
+
+<body>
+  <h1>Calendar documentation/test page</h1>
+
+  <h2>Initialization</h2>
+  <pre>
+    document.observe('dom:loaded', function() {
+      new Calendar();
+    });
+  </pre>
+
+  <h3>Date fields</h3>
+  <pre>&lt;input id=&quot;date&quot; type=&quot;text&quot; name=&quot;date&quot; class=&quot;date&quot; /&gt;</pre>
+  <label>
+    Date (will be converted to YYYY/MM/DD):
+    <input id="date" type="text" name="date" class="date" />
+  </label>
+</body>
+</html>
